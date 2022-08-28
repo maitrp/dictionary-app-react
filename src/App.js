@@ -1,12 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 import "./App.css";
 
 export default function App() {
   let [word, setWord] = useState(null);
+  let [results, setResults] = useState([]);
 
   function lookUp(response) {
-    console.log(response.data);
+    setResults(response.data);
   }
 
   function handleSubmit(event) {
@@ -31,6 +33,7 @@ export default function App() {
           search
         </button>
       </form>
+      <Results results={results} />
     </div>
   );
 }
