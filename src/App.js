@@ -27,7 +27,7 @@ export default function App() {
       <form onSubmit={handleSubmit}>
         <input
           type="search"
-          placeholder="Enter a English word to look up"
+          placeholder="Enter an English word to look up"
           onChange={updateWord}
         />
         <button

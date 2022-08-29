@@ -1,4 +1,5 @@
 import Definitions from "./Definitions";
+import Synonyms from "./Synonyms";
 
 export default function Meanings(props) {
   console.log(props);
@@ -9,6 +10,7 @@ export default function Meanings(props) {
           <div key={index}>
             <h3>{meaning.partOfSpeech}</h3>
             <Definitions definitions={meaning} />
+            <Synonyms synonyms={meaning.synonyms} />
           </div>
         );
       })}

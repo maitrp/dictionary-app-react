@@ -3,7 +3,9 @@ export default function Definitions(props) {
   return props.definitions.definitions.map(function (definition, index) {
     return (
       <div key={index}>
-        <p>{definition.definition}</p>
+        <p>
+          {index + 1}. Definition: {definition.definition}
+        </p>
         <p>
           <em>Example: {definition.example}</em>
         </p>
