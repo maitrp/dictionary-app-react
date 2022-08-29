@@ -23,13 +23,18 @@ export default function App() {
 
   return (
     <div className="App">
+      English Dictionary
       <form onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Enter a English word to look up"
           onChange={updateWord}
         />
-        <button type="submit" value="search">
+        <button
+          type="submit"
+          value="search"
+          className="material-symbols-outlined"
+        >
           search
         </button>
       </form>
