@@ -1,4 +1,5 @@
 import Meanings from "./Meanings";
+import Phonetics from "./Phonetics";
 
 export default function Results(props) {
   console.log(props.results);
@@ -8,7 +9,7 @@ export default function Results(props) {
     return (
       <div className="Results">
         <h2>{props.results[0].word} </h2>
-        <h3>{props.results[0].phonetic}</h3>
+        <Phonetics phonetics={props.results[0].phonetics} />
 
         {props.results.map(function (result, index) {
           return (

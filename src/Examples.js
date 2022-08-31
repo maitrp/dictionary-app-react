@@ -1,5 +1,4 @@
 export default function Examples(props) {
-  console.log(props);
   if (props.examples === undefined) {
     return null;
   } else {
