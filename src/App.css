@@ -1,13 +1,22 @@
 .App {
-  margin: 3rem 1rem 1rem 10rem;
+  margin: 5rem auto;
+  max-width: 960px;
+}
+
+.App section {
+  background-color: var(--background-color);
+  border: 1px solid var(--background-color);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  margin: 1rem 0;
+  padding: 1.5rem;
 }
 
 .App form {
   --size: 35px;
   display: flex;
-  max-width: 300px;
   background: white;
-  border: 2px solid orange;
+  border: 2px solid var(--vibrant-color);
   border-radius: 100vmax;
   padding: 2px;
 }
@@ -22,12 +31,12 @@
 }
 
 .App form button {
-  background: orange;
+  background: var(--vibrant-color);
   border: 0;
   padding: 0;
   margin: auto 0;
   border-radius: 100vmax;
-  color: white;
+  color: var(--primary-color);
   cursor: pointer;
   height: var(--size);
   width: var(--size);

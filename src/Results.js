@@ -8,9 +8,10 @@ export default function Results(props) {
   } else {
     return (
       <div className="Results">
-        <h2>{props.results[0].word} </h2>
-        <Phonetics phonetics={props.results[0].phonetics} />
-
+        <section>
+          <h2>{props.results[0].word} </h2>
+          <Phonetics phonetics={props.results[0].phonetics} />
+        </section>
         {props.results.map(function (result, index) {
           return (
             <div key={index}>

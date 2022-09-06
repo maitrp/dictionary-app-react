@@ -23,21 +23,23 @@ export default function App() {
 
   return (
     <div className="App">
-      English Dictionary
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Enter an English word to look up"
-          onChange={updateWord}
-        />
-        <button
-          type="submit"
-          value="search"
-          className="material-symbols-outlined"
-        >
-          search
-        </button>
-      </form>
+      <section>
+        English Dictionary
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            placeholder="Enter an English word to look up"
+            onChange={updateWord}
+          />
+          <button
+            type="submit"
+            value="search"
+            className="material-symbols-outlined"
+          >
+            search
+          </button>
+        </form>
+      </section>
       <Results results={results} />
     </div>
   );
