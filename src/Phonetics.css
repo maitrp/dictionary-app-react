@@ -1,0 +1,8 @@
+.speaker-icon {
+  cursor: pointer;
+}
+
+.speaker-icon:hover {
+  color: #ff7fb8;
+  background: rgb(205, 254, 255);
+}

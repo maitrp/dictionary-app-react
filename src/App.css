@@ -1,6 +1,6 @@
 .App {
   margin: 5rem auto;
-  max-width: 960px;
+  max-width: 70rem;
 }
 
 .App section {
@@ -8,7 +8,7 @@
   border: 1px solid var(--background-color);
   border-radius: 10px;
   box-shadow: var(--box-shadow);
-  margin: 1rem 0;
+  margin: 1rem 0.5rem 1rem;
   padding: 1.5rem;
 }
 
@@ -40,4 +40,9 @@
   cursor: pointer;
   height: var(--size);
   width: var(--size);
+}
+
+.App .search-results {
+  display: grid;
+  grid-template-columns: 66% 33%;
 }

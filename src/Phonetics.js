@@ -1,3 +1,5 @@
+import "./Phonetics.css";
+
 export default function Phonetics(props) {
   console.log(props);
 
@@ -23,6 +25,7 @@ export default function Phonetics(props) {
     return (
       <h3>
         <span
+          title={`${props.pronunciation} pronunciation`}
           onClick={playPhonetic}
           className="material-symbols-outlined speaker-icon"
         >
