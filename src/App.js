@@ -5,7 +5,7 @@ import Photos from "./Photos";
 import "./App.css";
 
 export default function App() {
-  let [word, setWord] = useState(null);
+  let [word, setWord] = useState("earth");
   let [results, setResults] = useState([]);
   let [photos, setPhotos] = useState(null);
 
@@ -17,10 +17,9 @@ export default function App() {
     setPhotos(response.data.photos);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    axios.get(apiUrl).then(lookUp);
+  function search() {
+    let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    axios.get(dictionaryApiUrl).then(lookUp);
 
     let pexelsApiKey =
       "563492ad6f91700001000001046e5d4c1fb14fe0bf3353eb1091ad8b";
@@ -29,33 +28,43 @@ export default function App() {
     axios.get(pexelsApiUrl, { headers }).then(searchPhotos);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
   function updateWord(event) {
     setWord(event.target.value);
   }
 
-  return (
-    <div className="App">
-      <section>
-        English Dictionary
-        <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Enter one English word to look up"
-            onChange={updateWord}
-          />
-          <button
-            type="submit"
-            value="search"
-            className="material-symbols-outlined"
-          >
-            search
-          </button>
-        </form>
-      </section>
-      <div className="search-results">
-        <Results results={results} />
-        <Photos photos={photos} />
+  if (results.length > 0) {
+    return (
+      <div className="App">
+        <section>
+          <header>English Dictionary for visual learners</header>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              placeholder="Enter one English word to look up"
+              onChange={updateWord}
+            />
+            <button
+              type="submit"
+              value="search"
+              className="material-symbols-outlined"
+            >
+              search
+            </button>
+          </form>
+        </section>
+        <div className="search-results">
+          <Results results={results} />
+          <Photos photos={photos} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    search();
+    return "Loading";
+  }
 }

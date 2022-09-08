@@ -1,15 +1,22 @@
 .App {
-  margin: 5rem auto;
+  margin: 2rem auto;
   max-width: 70rem;
 }
 
 .App section {
-  background-color: var(--background-color);
+  background: var(--background-color);
   border: 1px solid var(--background-color);
   border-radius: 10px;
   box-shadow: var(--box-shadow);
-  margin: 1rem 0.5rem 1rem;
+  margin: 1rem 0.5rem;
   padding: 1.5rem;
+}
+
+.App header {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Fira Mono", monospace;
+  font-size: 2rem;
 }
 
 .App form {
@@ -18,7 +25,15 @@
   background: white;
   border: 2px solid var(--vibrant-color);
   border-radius: 100vmax;
+  max-width: 55rem;
+  margin: 0 auto;
   padding: 2px;
+  transition: all 250ms ease-in-out;
+}
+
+.App form:focus-within {
+  border: 3px solid var(--vibrant-color);
+  box-shadow: var(--box-shadow);
 }
 
 .App form input {
@@ -27,7 +42,7 @@
   border: 0;
   outline: 0;
   font-family: inherit;
-  margin-left: 0.5rem;
+  margin-left: 0.8rem;
 }
 
 .App form button {
@@ -40,6 +55,10 @@
   cursor: pointer;
   height: var(--size);
   width: var(--size);
+}
+
+.App form button:hover {
+  filter: hue-rotate(-10deg);
 }
 
 .App .search-results {

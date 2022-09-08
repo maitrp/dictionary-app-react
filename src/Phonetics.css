@@ -1,8 +1,14 @@
-.speaker-icon {
-  cursor: pointer;
+.Phonetics {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
-.speaker-icon:hover {
-  color: #ff7fb8;
-  background: rgb(205, 254, 255);
+.Phonetics .speaker-icon {
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.Phonetics .speaker-icon:hover {
+  background: var(--vibrant-color);
 }

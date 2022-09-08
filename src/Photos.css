@@ -3,10 +3,17 @@
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 5px;
   height: fit-content;
+  margin-top: 1rem;
 }
 
 .Photos img {
   width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 8px;
+  border: 2px solid var(--button-background);
+  transition: all 250ms ease-in-out;
+}
+
+.Photos img:hover {
+  border: 3px solid var(--vibrant-color);
 }

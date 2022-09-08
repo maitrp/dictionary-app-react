@@ -1,7 +1,6 @@
 import "./Photos.css";
 
 export default function Photos(props) {
-  console.log(props);
   if (props.photos) {
     return (
       <div className="Photos">

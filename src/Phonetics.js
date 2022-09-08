@@ -15,18 +15,20 @@ export default function Phonetics(props) {
     return phonetic.audio !== "";
   });
 
-  function playPhonetic() {
+  function playPronunciation() {
     new Audio(phoneticAudio.audio).play();
   }
 
-  if (audioCount.length === 0) {
+  if (props.phonetics.length === 0) {
+    return null;
+  } else if (audioCount.length === 0) {
     return <h3>{phoneticText.text}</h3>;
   } else {
     return (
-      <h3>
+      <h3 className="Phonetics">
         <span
           title={`${props.pronunciation} pronunciation`}
-          onClick={playPhonetic}
+          onClick={playPronunciation}
           className="material-symbols-outlined speaker-icon"
         >
           volume_up
