@@ -58,7 +58,7 @@ export default function App() {
           </form>
         </section>
         <div className="search-results">
-          <Results results={results} />
+          <Results results={results} setWord={setWord} search={search} />
           <Photos photos={photos} />
         </div>
       </div>

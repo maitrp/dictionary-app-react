@@ -2,7 +2,7 @@ import Meanings from "./Meanings";
 import Phonetics from "./Phonetics";
 
 export default function Results(props) {
-  console.log(props.results);
+  console.log(props);
   if (props.results.length === 0) {
     return null;
   } else {
@@ -18,7 +18,11 @@ export default function Results(props) {
         {props.results.map(function (result, index) {
           return (
             <div key={index}>
-              <Meanings meanings={result} />
+              <Meanings
+                meanings={result}
+                setWord={props.setWord}
+                search={props.search}
+              />
             </div>
           );
         })}
