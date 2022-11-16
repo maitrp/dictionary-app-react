@@ -2,7 +2,6 @@ import Meanings from "./Meanings";
 import Phonetics from "./Phonetics";
 
 export default function Results(props) {
-  console.log(props);
   if (props.results.length === 0) {
     return null;
   } else {
@@ -22,6 +21,7 @@ export default function Results(props) {
                 meanings={result}
                 setWord={props.setWord}
                 search={props.search}
+                word={props.word}
               />
             </div>
           );

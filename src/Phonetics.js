@@ -1,8 +1,6 @@
 import "./Phonetics.css";
 
 export default function Phonetics(props) {
-  console.log(props);
-
   let phoneticAudio = props.phonetics.find(function (phonetic) {
     return phonetic.audio !== "";
   });

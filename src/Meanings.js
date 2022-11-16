@@ -2,7 +2,6 @@ import Definitions from "./Definitions";
 import Synonyms from "./Synonyms";
 
 export default function Meanings(props) {
-  console.log(props);
   return (
     <div className="Meanings">
       {props.meanings.meanings.map(function (meaning, index) {
@@ -14,6 +13,7 @@ export default function Meanings(props) {
               synonyms={meaning.synonyms}
               setWord={props.setWord}
               search={props.search}
+              word={props.word}
             />
           </section>
         );
