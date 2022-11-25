@@ -17,12 +17,7 @@ export default function Results(props) {
         {props.results.map(function (result, index) {
           return (
             <div key={index}>
-              <Meanings
-                meanings={result}
-                setWord={props.setWord}
-                search={props.search}
-                word={props.word}
-              />
+              <Meanings meanings={result} search={props.search} />
             </div>
           );
         })}

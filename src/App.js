@@ -5,7 +5,7 @@ import Photos from "./Photos";
 import "./App.css";
 
 export default function App() {
-  let [word, setWord] = useState("earth");
+  let [word, setWord] = useState(null);
   let [results, setResults] = useState([]);
   let [photos, setPhotos] = useState(null);
 
@@ -17,7 +17,7 @@ export default function App() {
     setPhotos(response.data.photos);
   }
 
-  function search() {
+  function search(word) {
     let dictionaryApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios.get(dictionaryApiUrl).then(lookUp);
 
@@ -30,7 +30,7 @@ export default function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    search(word);
   }
 
   function updateWord(event) {
@@ -58,18 +58,13 @@ export default function App() {
           </form>
         </section>
         <div className="search-results">
-          <Results
-            results={results}
-            setWord={setWord}
-            search={search}
-            word={word}
-          />
+          <Results results={results} search={search} />
           <Photos photos={photos} />
         </div>
       </div>
     );
   } else {
-    search();
+    search("earth");
     return "Loading";
   }
 }

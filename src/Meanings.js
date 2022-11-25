@@ -9,12 +9,7 @@ export default function Meanings(props) {
           <section key={index}>
             <h3>{meaning.partOfSpeech}</h3>
             <Definitions definitions={meaning} />
-            <Synonyms
-              synonyms={meaning.synonyms}
-              setWord={props.setWord}
-              search={props.search}
-              word={props.word}
-            />
+            <Synonyms synonyms={meaning.synonyms} search={props.search} />
           </section>
         );
       })}
